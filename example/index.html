@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html data-ng-app="qtTooltipsExample">
+    <head>
+        <title>qtTooltips - example</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../src/qtTooltips.css">
+        <style>
+            .qt-tooltips-text {
+                width:  300px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller="qtTooltipsExampleCtrl as ctrl">
+            <div class="qt-tooltips-text" tooltips="ctrl.ex1" ng-bind="ctrl.ex1"></div>
+            <div class="qt-tooltips-text">
+                <span tooltips-when-long="ctrl.ex2" ng-bind="ctrl.ex2"></div>
+            </div>
+        </div>
+        <script src="vendor/jquery-1.9.1/jquery-1.9.1.js"></script>
+        <script src="vendor/angular-1.6.2/angular.min.js"></script>
+        <script src="../src/qtTooltips.js"></script>
+        <script>
+            (function(ng) {
+                'use strict';
+
+                var module = ng.module('qtTooltipsExample', ['qtTooltips']);
+
+                module.controller('qtTooltipsExampleCtrl', [function(){
+                    var ctrl = this;
+
+                    ctrl.ex1 = 'This is the first example for qtTooltips.';
+                    ctrl.ex2 = 'This is the seconed example for qtTooltips, but this is more long.';
+                }]);
+
+            })(angular);
+        </script>
+    </body>
+</html>
