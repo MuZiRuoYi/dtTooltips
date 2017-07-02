@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html data-ng-app="qtTooltipsExample">
+<html data-ng-app="dtTooltipsExample">
     <head>
-        <title>qtTooltips - example</title>
+        <title>dtTooltips - example</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../src/qtTooltips.css">
+        <link rel="stylesheet" href="../src/dtTooltips.css">
         <style>
-            .qt-tooltips-text {
+            .dt-tooltips-text {
                 width:  300px;
                 overflow: hidden;
                 white-space: nowrap;
@@ -14,26 +14,26 @@
         </style>
     </head>
     <body>
-        <div ng-controller="qtTooltipsExampleCtrl as ctrl">
-            <div class="qt-tooltips-text" tooltips="ctrl.ex1" ng-bind="ctrl.ex1"></div>
-            <div class="qt-tooltips-text">
+        <div ng-controller="dtTooltipsExampleCtrl as ctrl">
+            <div class="dt-tooltips-text" tooltips="ctrl.ex1" ng-bind="ctrl.ex1"></div>
+            <div class="dt-tooltips-text">
                 <span tooltips-when-long="ctrl.ex2" ng-bind="ctrl.ex2"></div>
             </div>
         </div>
         <script src="vendor/jquery-1.9.1/jquery-1.9.1.js"></script>
         <script src="vendor/angular-1.6.2/angular.min.js"></script>
-        <script src="../src/qtTooltips.js"></script>
+        <script src="../src/dtTooltips.js"></script>
         <script>
             (function(ng) {
                 'use strict';
 
-                var module = ng.module('qtTooltipsExample', ['qtTooltips']);
+                var module = ng.module('dtTooltipsExample', ['dtTooltips']);
 
-                module.controller('qtTooltipsExampleCtrl', [function(){
+                module.controller('dtTooltipsExampleCtrl', [function(){
                     var ctrl = this;
 
-                    ctrl.ex1 = 'This is the first example for qtTooltips.';
-                    ctrl.ex2 = 'This is the seconed example for qtTooltips, but this is more long.';
+                    ctrl.ex1 = 'This is the first example for dtTooltips.';
+                    ctrl.ex2 = 'This is the seconed example for dtTooltips, but this is more long.';
                 }]);
 
             })(angular);

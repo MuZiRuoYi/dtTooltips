@@ -11,7 +11,7 @@
         } else {
             factory(angular);
         }
-        module.exports = 'qtTooltips';
+        module.exports = 'dtTooltips';
     } else if (typeof define === 'function' && define.amd) {
         // AMD
         define(['angular'], factory);
@@ -22,7 +22,7 @@
 }(this, function (angular) {
 	'use strict';
 
-	var tips = angular.module('qtTooltips', []);
+	var tips = angular.module('dtTooltips', []);
 	tips.factory('tooltipsService', ['$timeout', tooltipsService]);
 	tips.factory('tooltips', ['tooltipsService', tooltips]);
 	tips.directive('tooltips', ['tooltips', tooltipsDirective]);
@@ -161,7 +161,7 @@
 				},
 				showPositionByMouse: !!config.showPositionByMouse,
 				useHtml: config.useHtml !== false,
-				class: 'qt-tooltips ' + (config.class || ''),
+				class: 'dt-tooltips ' + (config.class || ''),
 				tooltipsIsCenter: !!config.tooltipsIsCenter,
 				maxWidth: config.maxWidth,
 				maxWidthType: config.maxWidthType,
